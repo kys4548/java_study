@@ -1,0 +1,27 @@
+void clear() : Map의 모든 객체를 삭제
+
+boolean containsKey(Object key) : 지정된 key 객체와 일치하는 Map의 key객체가 있는지 확인
+
+boolean containsValue(Object value) : 지정된 value 객체와 일치하는 Map의 value객체가 있는지 확인
+
+Set entrySet() : Map에 저장되어 있는 key-value쌍을 Map.Entry 타입의 객체로 저장한 "Set"으로 반환
+
+boolean equals(Object o) : 동일한 Map인지 비교
+
+Object get(Object key) : 지정한 key객체에 대응하는 value객체를 찾아서 반환
+
+int hashCode() : 해시코드를 반환
+
+boolean isEmpty() : Map이 비어있는지 확인
+
+Set keySet() : Map에 저장된 모든 key객체를 반환한다.
+
+Object put(Object key, Object Value) : Map에 value객체를 key객체에 연결(mapping)하여 저장
+
+void putAll(Map t) : 지정된 Map의 모든 key-value쌍을 추가
+
+Object remove(Object key) : 지정한 key객체와 일치하는 key-value 객체를 삭제
+
+int size() : Map에 저장된 key-value쌍의 개수를 반환
+
+Collection values() : Map에 저장된 모든 value 객체를 반환

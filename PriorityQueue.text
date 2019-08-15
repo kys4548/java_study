@@ -1,0 +1,41 @@
+Java의 최소 힙, 최대 힙
+최소 힙은 어떻게 표현됩니까? 
+최소 힙은 완전한 이진 트리입니다. 최소 힙은 일반적으로 배열로 표시됩니다. 루트 요소는 Arr [0]에 있습니다. 임의 들어 i 번째 노드, 즉 도착 [I] :
+
+Arr [(i -1) / 2] 는 부모 노드를 반환합니다.
+Arr [(2 * i) + 1] 은 왼쪽 자식 노드를 반환합니다.
+Arr [(2 * i) + 2] 는 오른쪽 자식 노드를 반환합니다.
+최소 힙 작업 :
+
+getMin () : Min Heap의 루트 요소를 반환합니다. 이 연산의 시간 복잡도는 O (1) 입니다.
+extractMin () : MinHeap 에서 최소 요소를 제거합니다. 이 오퍼레이션의 시간 복잡도는 O (Log n) 입니다.이 오퍼레이션은 루트를 제거한 후 heapify ()를 호출하여 힙 특성을 유지 보수해야합니다.
+insert () : 새 키를 삽입하는 데 O (Log n) 시간이 걸립니다. 트리 끝에 새 키를 추가합니다. 새 키가 부모 키보다 크면 아무 것도 할 필요가 없습니다. 그렇지 않으면 위반 된 힙 속성을 수정하기 위해 위로 이동해야합니다.
+
+
+import java.util.PriorityQueue;
+PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();  //최소 힙
+PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>(Collections.reverseOrder()); //최대 힙
+ 
+boolean	add(E e)
+지정된 요소를이 우선 순위 큐에 삽입합니다.
+void	clear()
+이 우선 순위 큐에서 모든 요소를 ​​제거합니다.
+Comparator<? super E>	comparator()
+이 큐에서 요소를 정렬하는 데 사용 null되거나이 큐가 요소 의 자연 순서 에 따라 정렬 된 경우 비교자를 리턴합니다 .
+boolean	contains(Object o)
+true이 큐에 지정된 요소가 포함되어 있는지를 리턴 합니다.
+Iterator<E>	iterator()
+이 큐의 요소에 대한 반복자를 리턴합니다.
+boolean	offer(E e)
+지정된 요소를이 우선 순위 큐에 삽입합니다.
+E	peek()
+이 큐의 선두를 취득 합니다만, 이 큐가 비어 있지 않은 경우 는 null을 돌려 줍니다 .
+E	poll()
+이 큐의 선두를 취득 해 삭제합니다 . 큐가 비어있는 경우 는 null을 리턴합니다 .
+boolean	remove(Object o)
+이 큐에서 지정된 요소의 단일 인스턴스를 제거합니다 (있는 경우).
+int	size()
+이 컬렉션의 요소 수를 반환합니다.
+Object[]	toArray()
+이 큐의 모든 요소를 ​​포함하는 배열을 리턴합니다.
+<T> T[]	toArray(T[] a)

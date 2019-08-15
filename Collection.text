@@ -1,0 +1,148 @@
+String[] arrayObj = new Stirng[2];
+갯수가 정해져있을때 사용가능 
+
+arrayObj.length; //String에서 배열이 몇개의 값을 가지고 있는가 확인법
+-------------------------------------------------------------
+import java.util.ArrayList;
+
+1)ArrayList al = new Arraylist();  //옛날 방식, 타입의 안정성이 떨어짐 
+al.add("one"); 	//list에 추가
+//al가 어떤 데이터에 대한 list인지 모르므로
+//어떤 데이터도 수용하기 위해 add할때는 모든 객체들의 조상인 object형으로 들어온다. 
+	String value = (String)al.get(i);
+	//String = Object를 String에 저장하려고 하기때문에 에러발생
+	//형변환을 먼저 해주어야 한다.
+
+2)ArrayList<String> al = new ArrayList<String>(); // 강제형변환 안해도됨 
+
+//제네릭(Generic)은 클래스 내부에서 사용할 데이터 타입을 외부에서 
+	//지정하는 기법을 의미한다.
+//get사용시 내부적으로 String으로 가져옴
+
+al.add("one"); 	//list에 추가
+al.get(i); //인덱스의 값
+al.size(); // 로 몇개의 값을 가지고 있는가 확인 
+
+----------------------------------------------------------
+
+Collection FrameWork
+
+-Collection	- Set 			- HashSet
+|(interface)|(interface)	- LinkedHashSet
+|			|				- TreeSet
+|			|
+|			- List 			- ArrayList
+|			|(interface)	- Vector
+|			|				- LinkedList
+|			|
+|			- Queue - PriorityQueue
+|
+-Map 		- SortedMap -TreeMap
+			|
+			- HashTable
+			|
+			- LinkedHashMap
+			|
+			- HashMap
+
+Set 과 List의 차이점 2가지 :
+	Set은 값의 중복 불가, List는 중복 가능
+// Set은 A.add(1)을 100개 해도 1개만 들어간다. 
+	list는 들어간 순서를 보장하지만 Set은 집합개념이므로 순서가 없다. 
+
+// Map은 Key와 Value로 사용 
+
+-------------------------------------------------------------
+
+Set은 수학에서의 집합개념을 프로그래밍적으로 나타낸 것이다.
+A.add(1); A.add(2); A.add(3);
+B.add(3); B.add(4); B.add(5);
+C.add(1); C.add(2);             //벤다이어그램으로 상상해보자!
+								//합집합, 교집합 등등
+
+A.containsAll(B); // false 일부가 들어가지만 전체가 들어가지는 않는다.
+A.containsAll(C); // true  전체가 들어간다. 
+// false는 부분집합이 아니다 true는 부분집합이다. ==> 부분집합
+
+A.addAll(B) //합집합 한것을 A에 담는다.  ==> 합집합 
+
+A.retainAll(B) //집합 A에도 있고 B에도 있는 것을 A에 담는다.  ==> 교집합
+
+A.removeAll(B) // 집합 A에 있고 집합 B에 없는 것을 A에 담는다 ==> 차집합
+---------------------------------------------------------------
+
+Collection과 Set interfce는 정확하게 동일한 API를 제공한다.
+get,set 같은 순서(index)와 관련된 api들은 Set에는 없다.
+
+---------------------------------------------------------------
+
+모든 Collection이 가지고 있는 api중에 iterator사용법
+//Iterator도 interface
+import java.util.Iterator;
+
+Iterator hi = (Iterator)A.iterater();
+whiel(hi.hasNext()){
+	System.out.println(hi.next());
+}
+// A 와 똑같은 hi iterater가 생긴다. 
+// next를 하면 그중의 하나의 값을 반환하면서 반환한 값을 지운다. 
+// 실제 A가 사라지는것이 아니라 hi안에서만 사라짐 
+
+--------------------------------------------------------------
+
+Map
+Key값은 중복이 안되고 Value 는 중복이 가능하다.
+값을 넣을때는 a.put으로 추가
+
+static void iteratorUsingForEach(HashMap map){
+	Set<Map.Entry<String, Integer>> entries = map.entrySet();
+	for(Map.Entry<String, Integer>> entry : entries){
+		System.out.println(entry.getKey()+ " : "+ entry.getValue());
+	}
+}
+//Map 자체에는 iterator기능이 없기 때문에 Map에 담겨있는 데이터를 가지고 있는
+//Set<Map.Entry>을 만든다.
+
+
+ static void iteratorUsingIterator(HashMap map){
+ 	Set<Map.Entry<String, Integer>> entries = map.entrySet();
+ 	Iterator<Map.Entry<String, Integer>> i = entries.iterator();
+ 	while(i.hasNext()){
+ 		Map.Entry<String, Integer> entry = i.next();
+ 		System.out.println(entry.getKey()+ " : "+ entry.getValue());
+ 	}
+ }
+ //비슷한 방법 
+ -----------------------------------------------------------------------
+
+ Collection의 정렬방법
+
+1) class 정렬방법 (객체내부의 어떤값을 통해)
+
+
+class Computer implements Comparable{
+	int serial;
+	String owner;
+	Computer(int serial, String owner){
+		this.serial = serial;
+		this.owner = owner;
+	}
+
+	public int compareTo(Object o){
+		return this.serial - ((Computer)o).serial;
+	}
+	// 양수이면 앞에것이 크고 0이면 같고 음수면 뒤에것이 크다.
+}
+
+
+ List<Computer> computers = new ArrayList<Computer>();
+ computers.add(new Computer(500,"aa"));
+ computers.add(new Computer(300,"ab"));
+ computers.add(new Computer(400,"cc"));
+
+ Collections.sort(computers); 
+ //Collections 안의 method들은 대부분 static으로 생성없이 사용 가능
+ Iterator i = computers.iterator();
+ while(i.hasNext()){
+ 	System.out.println(i.next());
+ }

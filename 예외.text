@@ -1,0 +1,94 @@
+try{
+	//예외의 발생이 예상되는 로직
+}catch(예외클래스 인스턴스){
+	//예외가 발생했을때 실행되는 로직
+}catch(예외클래스 인스턴스){
+	//예외가 발생했을때 실행되는 로직
+}finally{
+	//예외여부와 관계없이 실행되는 로직
+}
+
+try문 안에도 변수 설정시 범위 밖에선 사라진다.
+
+ex) DB연결 시
+finally에서 항상 DB와의 연결을 끊어줌 
+
+------------------------------------------------------
+
+예외 던지기(예외 사슬 가능)
+
+class B{
+	void run() throws 예외클래스, 예외클래스{
+		내용 
+	}
+}
+
+class C{
+	void run(){
+		B b = new B();
+		try{
+			b.run();
+		}catch(예외클래스 인스턴스){
+			//예외가 발생했을때 실행되는 로직
+		}catch(예외클래스 인스턴스){
+			//예외가 발생했을때 실행되는 로직
+		}
+	}
+}
+=> 또 다른 곳으로 책임을 보낼수 있다.
+---------------------------------------------------------
+
+예외만들기
+
+ex) 0으로 나눈 경우
+public void divide(){
+	if(right ==0){
+		throw new 예외클래스("0을 허용하지 않습니다");
+	}
+	//다음 코드내용 실행되지 않는다.	
+}
+
+public static void main(){
+	try{
+	divide(0);
+	}catch 예외클래스 인스턴스{
+	~~~
+	}
+}
+
+-------------------------------------------------------------
+IllegalArgumentException 매개변수가 의도하지 않은 상황을 유발시킬 떄
+IllegalStateException 메소드를 호출하기 위한 상태가 아닐 때
+NullPointerException 매개 변수 값이 null 일 때
+IndexOutOfBoundsException 인덱스 매개 변수 값이 범위를 벗어날 때
+ArithmeticException 산술적인 연산에 오류가 있을 때 
+
+------------------------------------------------------------------
+
+Object - Throwable - Exception 상속관계 
+
+Throwable 	- Error 자바 머신의 자체적인 에러 ex)메모리가 초과 
+			|
+			- Exception -IOException (checked)
+			(checked)			|
+						-RuntimeException -ArithmeticException
+						(unchecked)
+ArithmeticException과 IOException 차이
+부모중에 RuntimeException이 있는 예외는 unchecked예외 예외처리해 주지않아도 됨
+IOException은 checked 예외 반드시 try catch나 throws를 사용해 예외 처리해줘야함
+---------------------------------------------------------------------------
+
+나만의 예외 클래스 만들기
+
+1. 자신의 예외가 checked 인지 unchecked 인지
+
+사용자 쪽에서 예외 상황을 복구 할 수 있다면 checked 예외를 사용한다.
+사용자에게 문제를 해결할 기회를 주면서 예외처리를 강제
+checked 예외를 너무 자주 사용하면 사용자를 힘들게 할 수 있어서 적정선 유지 
+
+예외상황이 이미 발생한 시점에서 그냥 프로그램을 종료하는 것이 덜 위험할 때는 
+unchecked를 사용한다. 
+
+class DivideException extends Exception{} //checked
+class DivideException extends RuntimeException{} // unchecked
+class DivideException extends ArithmeticException{} // 특화
