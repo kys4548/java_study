@@ -1,0 +1,5 @@
+Iterator<Object> i = hs.iterator();
+
+while(i.hasNext()){
+	i.next();
+}

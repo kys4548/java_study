@@ -24,4 +24,6 @@ Object remove(Object key) : 지정한 key객체와 일치하는 key-value 객체
 
 int size() : Map에 저장된 key-value쌍의 개수를 반환
 
+getOrDefault(a,0) : key a에 대한 value가 있으면 value반환, 없으면 0 대입 후 반환  
+
 Collection values() : Map에 저장된 모든 value 객체를 반환
