@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="efbae963-d73d-46cf-abcb-1cab0664ab71" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VVSFykTz7UHQEeMCquJznylnsZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="me.youngsil" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BookServiceTest.di" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dynamic-proxy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.youngsil.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="me.youngsil" />
+      <option name="MAIN_CLASS_NAME" value="me.youngsil.BookServiceTest" />
+      <option name="METHOD_NAME" value="di" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BookServiceTest.di" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="efbae963-d73d-46cf-abcb-1cab0664ab71" name="Default Changelist" comment="" />
+      <created>1577336669721</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577336669721</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1087" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1577337242184">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="1087" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1577337242184" />
+    <state width="1250" height="190" key="GridCell.Tab.0.bottom" timestamp="1577338889635">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1250" height="190" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1577338889635" />
+    <state width="1250" height="190" key="GridCell.Tab.0.center" timestamp="1577338889635">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1250" height="190" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1577338889635" />
+    <state width="1250" height="190" key="GridCell.Tab.0.left" timestamp="1577338889635">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1250" height="190" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1577338889635" />
+    <state width="1250" height="190" key="GridCell.Tab.0.right" timestamp="1577338889635">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1250" height="190" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1577338889635" />
+    <state x="1146" y="121" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1577336824913">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="1146" y="121" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1577336824913" />
+  </component>
+</project>

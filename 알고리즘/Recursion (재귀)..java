@@ -305,6 +305,18 @@ boolean queens(int level){
 			return true;
 	}
 }
+int queens(int level,int index){
+	if(!promising(level)) // 놓을수 있는지 확인하는 코드
+		return 0;
+	else if (level==N)
+		return 1;
+	int answer = 0;
+	for(int i=1; i<=N; i++){
+		answer += queens(level,i);
+	}
+	return answer;
+
+}
 cols[level] : level번째 말이 몇번째 행에 놓여졌는지 적혀있다.
 이전 level말들 간의 충돌이 없음이 보장되어 있어야한다.
 따라서 마지막에 놓인 말이 이전에 놓인 다른 말들과 충돌하지는 검사하는것으로 충분
