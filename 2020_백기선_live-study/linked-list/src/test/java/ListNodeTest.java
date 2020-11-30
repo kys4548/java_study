@@ -91,4 +91,41 @@ class ListNodeTest {
         assertEquals(node1, result);
     }
 
+    @Test
+    @DisplayName("contains메서드에서 LinkedList가 임의의 ListNode를 포함하고 있다면 true 반환")
+    void containsTest01() {
+        //given
+        ListNode head = new ListNode(0);
+        ListNode node1 = new ListNode(43242);
+        ListNode node2 = new ListNode(56464);
+        head.nextNode = node1;
+        node1.nextNode = node2;
+
+        //when
+        boolean result = LinkedList.contains(head, node2);
+
+        //then
+        assertTrue(result);
+
+    }
+
+    @Test
+    @DisplayName("contains메서드에서 LinkedList가 임의의 ListNode를 포함하지 않는다면 false 반환")
+    void containsTest02() {
+        //given
+        ListNode head = new ListNode(0);
+        ListNode node1 = new ListNode(43242);
+        ListNode node2 = new ListNode(56464);
+        head.nextNode = node1;
+        node1.nextNode = node2;
+
+        ListNode node3 = new ListNode(25534);
+
+        //when
+        boolean result = LinkedList.contains(head, node3);
+
+        //then
+        assertFalse(result);
+
+    }
 }

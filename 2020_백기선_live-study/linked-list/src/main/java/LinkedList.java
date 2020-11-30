@@ -42,6 +42,16 @@ public class LinkedList {
         removeNode.nextNode = null;
         return removeNode;
     }
+
+    public static boolean contains(ListNode head, ListNode nodeToCheck) {
+        while(head != null) {
+            if(head.equals(nodeToCheck)) {
+                return true;
+            }
+            head = head.nextNode;
+        }
+        return false;
+    }
 }
 
 class ListNode {
