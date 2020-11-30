@@ -24,17 +24,22 @@ public class LinkedList {
         if(head == null) {
             throw new RuntimeException();
         }
+        if(positionToRemove == 0) {
+            return head.nextNode;
+        }
 
+        ListNode preNode = null;
         ListNode removeNode = head;
         while(positionToRemove > 0) {
+            preNode = removeNode;
             removeNode = removeNode.nextNode;
             if(removeNode == null) {
                 throw new RuntimeException();
             }
             positionToRemove--;
         }
-
-
+        preNode.nextNode = removeNode.nextNode;
+        removeNode.nextNode = null;
         return removeNode;
     }
 }
