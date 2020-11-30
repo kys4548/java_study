@@ -28,7 +28,7 @@ class ListNodeTest {
         ListNode node1 = new ListNode(43242);
         ListNode node2 = new ListNode(56464);
 
-        LinkedList.add(head, node1, 1);
+        head.nextNode = node1;
 
         //when then
         assertThrows(RuntimeException.class, () -> LinkedList.add(head, node2, 3));
@@ -42,10 +42,10 @@ class ListNodeTest {
         ListNode node1 = new ListNode(43242);
         ListNode node2 = new ListNode(56464);
 
+        head.nextNode = node1;
         int position = 1;
 
         //when
-        LinkedList.add(head, node1, 1);
         LinkedList.add(head, node2, position);
 
         ListNode result = head;
@@ -57,4 +57,38 @@ class ListNodeTest {
         //then
         assertEquals(node2, result);
     }
+
+    @Test
+    @DisplayName("remove메서드에서 list의 길이보다 position이 크거나 같으면 예외가 발생한다.")
+    void removeTest01() {
+        //given
+        ListNode head = new ListNode(0);
+        ListNode node1 = new ListNode(43242);
+        ListNode node2 = new ListNode(56464);
+        head.nextNode = node1;
+        node1.nextNode = node2;
+
+        //when then
+        assertThrows(RuntimeException.class, () -> LinkedList.remove(head, 3));
+    }
+
+    @Test
+    @DisplayName("remove메서드에서 position값의 ListNode index가 제거된다.")
+    void removeTest02() {
+        //given
+        ListNode head = new ListNode(0);
+        ListNode node1 = new ListNode(43242);
+        ListNode node2 = new ListNode(56464);
+        head.nextNode = node1;
+        node1.nextNode = node2;
+
+        int position = 1;
+
+        //when
+        ListNode result = LinkedList.remove(head, position);
+
+        //then
+        assertEquals(node1, result);
+    }
+
 }

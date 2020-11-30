@@ -19,6 +19,24 @@ public class LinkedList {
         preNode.nextNode = nodeToAdd;
         return head;
     }
+
+    public static ListNode remove(ListNode head, int positionToRemove) {
+        if(head == null) {
+            throw new RuntimeException();
+        }
+
+        ListNode removeNode = head;
+        while(positionToRemove > 0) {
+            removeNode = removeNode.nextNode;
+            if(removeNode == null) {
+                throw new RuntimeException();
+            }
+            positionToRemove--;
+        }
+
+
+        return removeNode;
+    }
 }
 
 class ListNode {
