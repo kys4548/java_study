@@ -126,6 +126,5 @@ class ListNodeTest {
 
         //then
         assertFalse(result);
-
     }
 }

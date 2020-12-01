@@ -24,8 +24,10 @@ public class LinkedList {
         if(head == null) {
             throw new RuntimeException();
         }
+
         if(positionToRemove == 0) {
-            return head.nextNode;
+            head.nextNode = null;
+            return head;
         }
 
         ListNode preNode = null;
