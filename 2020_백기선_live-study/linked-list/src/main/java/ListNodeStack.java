@@ -5,16 +5,43 @@ public class ListNodeStack implements Stack<ListNode> {
 
     @Override
     public void push(ListNode data) {
-
+        if (head == null) {
+            head = data;
+            return;
+        }
+        ListNode preNode = head;
+        while (head.nextNode != null) {
+            preNode = preNode.nextNode;
+        }
+        preNode.nextNode = data;
     }
 
     @Override
     public int pop() {
-        return 0;
+        if (head == null) {
+            throw new RuntimeException();
+        }
+        ListNode preNode = head;
+        ListNode removeNode = head;
+
+        while (removeNode.nextNode != null) {
+            preNode = removeNode;
+            removeNode = removeNode.nextNode;
+        }
+        preNode.nextNode = null;
+        return removeNode.num;
     }
 
     @Override
     public int peek() {
-        return 0;
+        if (head == null) {
+            throw new RuntimeException();
+        }
+
+        ListNode peekNode = head;
+        while (peekNode.nextNode != null) {
+            peekNode = peekNode.nextNode;
+        }
+        return peekNode.num;
     }
 }

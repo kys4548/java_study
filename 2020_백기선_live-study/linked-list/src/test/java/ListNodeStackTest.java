@@ -15,14 +15,7 @@ class ListNodeStackTest {
         stack.push(listNode);
 
         //then
-        assertTrue(listNode, );
-    }
-
-    @Test
-    @DisplayName("push메서드에서 인덱스가 스택의 범위를 넘지않으면 정상 작동하고 가장 뒤에 값이 들어간다.")
-    void pushTest02() {
-        //given
-        Stack stack = new ListNodeStack();
+        assertEquals(listNode.num, stack.peek());
     }
 
     @Test
@@ -31,6 +24,8 @@ class ListNodeStackTest {
         //given
         Stack stack = new ListNodeStack();
 
+        //when then
+        assertThrows(RuntimeException.class, () -> stack.pop());
     }
 
     @Test
@@ -38,6 +33,15 @@ class ListNodeStackTest {
     void popTest02() {
         //given
         Stack stack = new ListNodeStack();
+        ListNode listNode01 = new ListNode(10034);
+        ListNode listNode02 = new ListNode(10034);
+
+        //when
+        stack.push(listNode01);
+        stack.push(listNode02);
+
+        //then
+        assertEquals(listNode02.num, stack.pop());
     }
 
 }
