@@ -1,5 +1,3 @@
-import javax.management.RuntimeMBeanException;
-
 public class ArrayStack implements Stack<Integer> {
     //편의상 public 구현
     public int max;
